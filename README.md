@@ -1,2 +1,3 @@
-# spotify-lyrics-grabber
-web app that get lyrics from songs on spotify using web scrapping
+# Spotify Lyrics Grabber
+
+Web app that get lyrics from songs on spotify using web scrapping
