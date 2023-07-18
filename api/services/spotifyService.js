@@ -1,5 +1,6 @@
 require("dotenv").config()
 const axios = require("axios")
+const { getToken } = require("../models/tokenModel")
 
 class SpotifyService {
   constructor() {
@@ -7,6 +8,7 @@ class SpotifyService {
     this.clientSecret = process.env.SPOTIFY_CLIENT_SECRET
     this.tokenUrl = "https://accounts.spotify.com/api/token"
     this.baseUrl = "https://api.spotify.com/v1"
+    this.token = getToken()
   }
 
   #buildAuthKey(id, secret) {
@@ -25,15 +27,18 @@ class SpotifyService {
 
     try {
       const response = await axios.post(this.tokenUrl, form, { headers })
-      return response.data // 1h expiration time
+      return response.data
     } catch (err) {
       throw err
     }
   }
 
-  async search(query, type, limit, token) {
-    const url = `${SpotifyService.baseUrl}/search?q=${query}&type=${type}&limit=${limit}`
-    const headers = { Authorization: `Bearer ${token}` }
+  async search(query, type, limit) {
+    query = encodeURIComponent(query)
+    type = encodeURIComponent(type)
+    limit = encodeURIComponent(limit)
+    const url = `${this.baseUrl}/search?q=${query}&type=${type}&limit=${limit}`
+    const headers = { Authorization: `Bearer ${this.token.token}` }
 
     try {
       const response = await axios.get(url, { headers })
@@ -43,9 +48,10 @@ class SpotifyService {
     }
   }
 
-  async getTrack(id, token) {
-    const url = `${SpotifyService.baseUrl}/tracks/${id}`
-    const headers = { Authorization: `Bearer ${token}` }
+  async getTrack(id) {
+    id = encodeURIComponent(id)
+    const url = `${this.baseUrl}/tracks/${id}`
+    const headers = { Authorization: `Bearer ${this.token.token}` }
 
     try {
       const response = await axios.get(url, { headers })

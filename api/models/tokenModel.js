@@ -5,10 +5,12 @@ let token = {
 }
 
 setToken = newToken => {
+  tokenTime = new Date()
+  expiresIn = new Date(tokenTime.getTime() + 3600 * 1000)
   token = {
     token: newToken,
-    tokenTime: new Date(),
-    expiresIn: new Date(tokenTime.getTime() + 3600 * 1000),
+    tokenTime,
+    expiresIn,
   }
 }
 

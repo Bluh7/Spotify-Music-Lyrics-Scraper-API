@@ -1,7 +1,8 @@
+require("dotenv").config()
 const SpotifyService = require("../services/spotifyService")
 
 class TokenController {
-  static async getToken(req, res) {
+  static async getNewToken(req, res) {
     const spotify = new SpotifyService()
     const result = await spotify.getAccessToken()
 

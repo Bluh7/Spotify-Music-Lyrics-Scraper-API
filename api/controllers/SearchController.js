@@ -2,8 +2,9 @@ const SpotifyService = require("../services/spotifyService")
 
 class SearchController {
   static async search(req, res) {
-    const { query, type, limit, token } = req.query
-    const result = await SpotifyService.search(query, type, limit, token)
+    const { query, type, limit } = req.body
+    const spotify = new SpotifyService()
+    const result = await spotify.search(query, type, limit)
 
     if (result.error) {
       return res.status(result.error.status).json(result.error)
