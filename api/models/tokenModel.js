@@ -4,7 +4,7 @@ let token = {
   expiresIn: null,
 }
 
-setToken = newToken => {
+const setToken = newToken => {
   tokenTime = new Date()
   expiresIn = new Date(tokenTime.getTime() + 3600 * 1000)
   token = {
@@ -14,7 +14,7 @@ setToken = newToken => {
   }
 }
 
-getToken = () => {
+const getToken = () => {
   return token
 }
 

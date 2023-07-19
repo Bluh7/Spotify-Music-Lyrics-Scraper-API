@@ -2,7 +2,7 @@ require("dotenv").config()
 const axios = require("axios")
 const { setToken, getToken } = require("../models/tokenModel")
 
-verifyToken = async (req, res, next) => {
+const verifyToken = async (req, res, next) => {
   const token = getToken()
 
   if (!token || new Date() >= token.expiresIn) {
@@ -27,7 +27,9 @@ verifyToken = async (req, res, next) => {
 
       next()
     } catch (err) {
-      throw err
+      return res
+        .status(err.response.data.error.status)
+        .json(err.response.data.error)
     }
   } else {
     next()

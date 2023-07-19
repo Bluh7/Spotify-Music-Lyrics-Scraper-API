@@ -1,0 +1,95 @@
+[
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": "open.spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "",
+    "value": "",
+    "domain": ".spotify.com",
+    "path": "/",
+    "expires": 0,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]

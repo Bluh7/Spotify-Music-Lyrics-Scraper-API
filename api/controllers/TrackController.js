@@ -1,10 +1,10 @@
 const SpotifyService = require("../services/spotifyService")
 
-class SearchController {
-  static async search(req, res) {
-    const { query, type, limit, market } = req.query
+class TrackController {
+  static async getTrack(req, res) {
+    const { id } = req.query
     const spotify = new SpotifyService()
-    const result = await spotify.search(query, type, limit, market)
+    const result = await spotify.getTrack(id)
 
     if (result.error) {
       return res.status(result.error.status).json(result.error)
@@ -14,4 +14,4 @@ class SearchController {
   }
 }
 
-module.exports = SearchController
+module.exports = TrackController

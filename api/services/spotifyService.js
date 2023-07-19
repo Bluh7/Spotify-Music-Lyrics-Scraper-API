@@ -29,22 +29,23 @@ class SpotifyService {
       const response = await axios.post(this.tokenUrl, form, { headers })
       return response.data
     } catch (err) {
-      throw err
+      return err.response.data
     }
   }
 
-  async search(query, type, limit) {
+  async search(query, type, limit, market = "US") {
     query = encodeURIComponent(query)
     type = encodeURIComponent(type)
     limit = encodeURIComponent(limit)
-    const url = `${this.baseUrl}/search?q=${query}&type=${type}&limit=${limit}`
+    market = encodeURIComponent(market)
+    const url = `${this.baseUrl}/search?q=${query}&type=${type}&limit=${limit}&market=${market}`
     const headers = { Authorization: `Bearer ${this.token.token}` }
 
     try {
       const response = await axios.get(url, { headers })
       return response.data
     } catch (err) {
-      throw err
+      return err.response.data
     }
   }
 
@@ -57,7 +58,7 @@ class SpotifyService {
       const response = await axios.get(url, { headers })
       return response.data
     } catch (err) {
-      throw err
+      return err.response.data
     }
   }
 }

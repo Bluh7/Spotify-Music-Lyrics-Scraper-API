@@ -1,6 +1,6 @@
 require("dotenv").config()
 
-verifySecret = (req, res, next) => {
+const verifySecret = (req, res, next) => {
   const { secret } = req.body
 
   if (secret !== process.env.SECRET) {
