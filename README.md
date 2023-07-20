@@ -1,3 +1,3 @@
-# Spotify Lyrics Grabber
+# Spotify Lyrics Grabber API
 
-Web app that get lyrics from songs on spotify using web scrapping
+API that will use web scraping to get lyrics from spotify with puppeteer
