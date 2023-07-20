@@ -63,3 +63,7 @@ POST /token
   "secret": "*********"
 }
 ```
+
+## Photo as example from Daft Punk Giorgio by Moroder
+
+![Example](https://github.com/Bluh7/spotify-lyrics-scraper/assets/94490806/f593d178-aade-4bed-a5b0-54a63b304484)
