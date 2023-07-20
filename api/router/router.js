@@ -13,6 +13,6 @@ router.post("/token", secretMiddleware, TokenController.getNewToken)
 
 router.get("/search", tokenMiddleware, SearchController.search)
 router.get("/track", tokenMiddleware, TrackController.getTrack)
-router.get("/lyrics", LyricsController.getLyrics)
+router.get("/lyrics", tokenMiddleware, LyricsController.getLyrics)
 
 module.exports = router

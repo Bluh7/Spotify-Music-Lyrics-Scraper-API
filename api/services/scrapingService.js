@@ -10,14 +10,15 @@ class ScrappingService {
 
   async getLyrics(trackId) {
     const url = `${this.baseUrl}/${trackId}`
-    const browser = await puppeteer.launch({ headless: true })
+    const browser = await puppeteer.launch({ headless: "new" })
     const page = await browser.newPage()
 
     await page.setCookie(...this.cookies)
-    await page.goto(url, { waitUntil: "networkidle2" })
+    await page.goto(url)
+    await page.waitForSelector(`.${this.lyricsClass}`, { timeout: 8000 })
 
-    const lyrics = await page.$$eval(`.${this.lyricsClass}`, elements => {
-      return elements.map(element => element.innerText.trim())
+    const lyrics = await page.$$eval(`.${this.lyricsClass}`, lyrics => {
+      return lyrics.map(verses => verses.innerText.trim())
     })
 
     await browser.close()

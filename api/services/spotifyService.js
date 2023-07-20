@@ -49,9 +49,10 @@ class SpotifyService {
     }
   }
 
-  async getTrack(id) {
+  async getTrack(id, market = "US") {
     id = encodeURIComponent(id)
-    const url = `${this.baseUrl}/tracks/${id}`
+    market = encodeURIComponent(market)
+    const url = `${this.baseUrl}/tracks/${id}?market=${market}`
     const headers = { Authorization: `Bearer ${this.token.token}` }
 
     try {
