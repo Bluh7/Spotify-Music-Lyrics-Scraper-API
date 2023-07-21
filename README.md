@@ -2,6 +2,12 @@
 
 API that will use web scraping to get lyrics from spotify with puppeteer.
 
+## Requirements
+
+Google Chrome<br>
+Client id and client secret from spotify application that you can get here: https://developer.spotify.com/dashboard<br>
+Spotify cookies from any account in json format that you can get using this extension: https://chrome.google.com/webstore/detail/nmckokihipjgplolmcmjakknndddifde
+
 ## Endpoints
 
 #### `GET /lyrics`
