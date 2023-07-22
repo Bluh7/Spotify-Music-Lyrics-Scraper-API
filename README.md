@@ -1,4 +1,4 @@
-# Spotify Lyrics Scraper API
+# Spotify Music Lyrics Scraper API
 
 Nodejs API that will use puppeteer to scrape music lyrics from Spotify for free
 
